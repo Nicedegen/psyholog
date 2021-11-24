@@ -5,3 +5,4 @@ Mobile-first style.
 Tech. used:
 - vue 2.+
 - vue-router
+- scss
