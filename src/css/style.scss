@@ -1,0 +1,469 @@
+/* Variables  */
+
+@mixin text-style-roboto ($size: 16px, $height: 22px) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $size;
+  font-weight: 400;
+  line-height: $height;
+};
+
+@mixin text-style-vt ($size: 16px, $height: 22px) {
+  font-family: 'VT323', monospace;
+  font-size: $size;
+  font-weight: 400;
+  line-height: $height;
+};
+
+$main-color: #fff;
+$bg-color: #000;
+
+$screen-sm: 576px;
+$screen-sml: 650px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+
+/* /Variables  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $bg-color;
+    color: $main-color;
+}
+
+/* ---    START PAGE ---------- */
+
+
+.main-page {
+  width: 100vw;
+  height: 100vh;
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-transform: lowercase;
+
+  &-content {
+    flex: 1 0 auto;
+  }
+  
+
+  &-gif,
+  &-button {
+      text-align: center;
+    }
+  
+  &-footer {
+    flex: 0 0 auto;
+
+    .icons {
+      &-network {
+        display: flex;
+        justify-content: center;
+
+        li {
+          list-style-type: none;
+        }
+      }
+    } 
+  }
+  
+  @media (max-width: $screen-sm-max) {
+    background-color: $bg-color;
+    &-gif {
+        padding-top: 15vh;
+        margin-left: -80px;
+
+        &__img {
+          width: 100vw;
+          height: 30vh;
+        }
+    }
+    &-button {
+      justify-content: center;
+      padding-top: 14vh;
+      display: flex;
+      align-items: flex-end;
+
+
+      &__start {
+        @include text-style-roboto(22px, 24px);
+        color: #fff;
+        width: 68vw;
+        height: 65px;
+        border-radius: 12px;
+        background-color: #000;
+        border: 1px solid #fff;
+      }  
+    }
+    &-footer {
+      &-inner {
+        padding-bottom: 8vh;
+      }
+    }
+    
+    .icons {
+      &-network {
+        padding-top: 5vh;
+
+        li+li{
+          padding-left: 12vw;
+        }
+      }
+    } 
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max) {
+    .main {
+      &-gif {
+        padding-top: 5vh;
+        img {
+          width: 70vw;
+          height: 50vh;
+        }
+      }
+
+      &-button {
+        padding-top: 5vh;
+
+        &__start {
+          width: 40vw;
+        }
+      }
+    }
+
+    .icons-network {
+      padding-top: 8vh;
+
+      li+li {
+        padding-left: 7vw;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    &-gif {
+      margin-left: -50px;
+      padding-top: 4vh;
+
+      &__img {
+        width: 60vw;
+        height: 50vh;
+      }
+    }
+    &-button {
+      padding-top: 5vh;
+
+      &__start {
+        width: 30vw;
+        height: 65px;
+        border-radius: 12px;
+        @include text-style-roboto(22px, 24px);
+      }  
+    }
+    &-footer {
+      &-inner {
+        padding: 0 0 12px 40px;
+      }
+    }
+    
+    .icons {
+      &-network {
+    
+        li {
+          list-style-type: none;
+          padding-right: 4vw;
+        }
+      }
+    } 
+  }
+  @media (min-width: $screen-lg) and (max-width: $screen-lg-max) {
+    &-gif {
+      padding-top: 40px;
+      margin-left: -50px;
+    }
+    &-button {
+      padding-top: 80px;
+
+      &__start {
+        width: 200px;
+        height: 50px;
+        border-radius: 12px;
+        font-size: 22px;
+        line-height: 24px;
+      }  
+    } 
+  }
+  @media (min-width: $screen-xl) {
+    &-gif {
+      padding-top: 40px;
+      margin-left: -50px;
+    }
+    &-button {
+      padding-top: 80px;
+
+      &__start {
+        width: 200px;
+        height: 50px;
+        border-radius: 12px;
+        @include text-style-roboto(22px, 24px);
+      }  
+    } 
+  }    
+}
+
+/* ---    /START PAGE ---------- */
+
+/* ---    Slider PAGE ---------- */
+.slider {
+  text-transform: lowercase;
+
+  &-inner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-loading {
+    @include text-style-vt(20px, 24px);
+    text-align: center;
+
+    &::before {
+      content: 'Загрузка';
+    }
+
+    &::after {
+      content: '.';
+      animation: loading 1.5s ease infinite;
+    }
+
+    @keyframes loading {
+      60%  { text-shadow: 0.35em 0 0 currentColor; }
+      100% { text-shadow: 0.35em 0 0 currentColor, 0.75em 0 0 currentColor; }
+    }
+  }
+
+  &-questions {
+    height: 40vh;
+    margin: 0 auto;
+    padding-top: 30vh;
+
+    &-block {
+      text-align: center;
+      width: 80vw;
+      height: 500px;
+      overflow:hidden;
+      -webkit-animation: type 5s steps(10, end);
+      animation: type 5s steps(10, end);
+
+
+      &__text {
+        @include text-style-vt(32px, 40px);
+      }
+
+      @keyframes type{
+        from { height: 0; }
+      }
+     
+      @-webkit-keyframes type{
+        from { height: 0; }
+      }
+    }
+
+    
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 25vh;
+    opacity: 0;
+    transition: opacity 4s ease-in-out;
+
+
+    &__yes,
+    &__no {
+      width: 120px;
+      height: 50px;
+      background-color: $bg-color;
+      border: 1px solid $main-color;
+      color: $main-color;
+      @include text-style-vt(24px, 32px);
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__yes {
+      margin-right: 5vw;
+    }
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max){
+    .slider-questions-block {
+      width: 90vw;
+      white-space: nowrap;
+      overflow: hidden;
+      -webkit-animation: smls 3s steps(50, end);
+      animation: smls 3s steps(50, end);
+
+      &__text {
+        @include text-style-vt(32px, 40px);
+      }
+
+      @keyframes smls{
+        from { width: 0; }
+      }
+     
+      @-webkit-keyframes smls{
+        from { width: 0; }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/* ---    /Slider PAGE ---------- */
+
+/* ---    GameOver PAGE ---------- */
+
+.loos {
+  
+
+  &-inner {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+  }
+  &-text {
+    @include text-style-vt(24px, 32px);
+    padding-top: 35vh;
+    text-transform: uppercase;
+  }
+
+  &-btn {
+    padding-top: 15vh;
+
+    button {
+      @include text-style-vt(22px, 24px);
+    }
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max){
+    .main-button__start {
+      width: 20vw;
+      height: 12vh;
+    }
+  }
+}
+/* ---    GameOver PAGE ---------- */
+
+/* ---    End PAGE ---------- */
+
+.winner {
+  &-inner {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-text {
+    padding-top: 20vh;
+    
+
+    &__loading {
+      @include text-style-vt(24px, 32px);
+
+      &::after {
+        content: '.';
+        animation: loading 1.5s ease infinite;
+      }
+  
+      @keyframes loading {
+        60%  { text-shadow: 0.35em 0 0 currentColor; }
+        100% { text-shadow: 0.35em 0 0 currentColor, 0.75em 0 0 currentColor; }
+      }
+    }
+  }
+
+  &-animation {
+    box-sizing: content-box;
+    width: 205px;
+    padding-left: 22vw;
+    white-space: nowrap;
+    overflow:hidden;
+    -webkit-animation: stype 5s steps(50, end);
+    animation: stype 5s steps(50, end);
+
+
+    &__text {
+      @include text-style-vt(24px, 32px);
+    }
+
+    @keyframes stype{
+      from { width: 0; }
+    }
+   
+    @-webkit-keyframes stype{
+      from { width: 0; }
+    }
+  }
+
+  &-gif {
+    padding-top: 10vh;
+
+    img {
+      width: 80vw;
+      height: 50vh;
+    }
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max){
+
+    .winner {
+      &-text {
+        padding-top: 15vh;
+      }
+      &-animation {
+        padding-left: 35vw;
+      }
+    }
+    &-gif {
+      img {
+        width: 40vw;
+        height: 40vh;
+      }
+    }
+  }
+}
+
+/* ---    /End PAGE ---------- */
+
+
+
