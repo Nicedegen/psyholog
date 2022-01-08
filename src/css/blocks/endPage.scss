@@ -1,0 +1,99 @@
+.winner {
+  &-inner {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-text {
+    padding-top: 20vh;
+    
+
+    &__loading {
+      @include text-style-vt(24px, 32px);
+
+      &::after {
+        content: '.';
+        animation: loading 1.5s ease 2 forwards;
+      }
+  
+      @keyframes loading {
+        60%  { text-shadow: 0.35em 0 0 currentColor; }
+        100% { text-shadow: 0.35em 0 0 currentColor, 0.75em 0 0 currentColor; }
+      }
+    }
+  }
+
+  &-animation {
+    width: 85vw;
+    margin: 0 auto;
+    padding-top: 1vh;
+
+
+    &__text {
+      @include text-style-vt(24px, 32px);
+    }
+
+    @keyframes stype{
+      from { width: 0; }
+    }
+   
+    @-webkit-keyframes stype{
+      from { width: 0; }
+    }
+  }
+
+  &-gif {
+    padding-top: 10vh;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max){
+
+    .winner {
+      &-text {
+        padding-top: 15vh;
+      }
+    }
+    &-gif {
+      img {
+        width: 30vw;
+        height: 30vh;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md-max) {
+    .winner {
+    }
+    &-gif img{
+      width: 30vw;
+      height: 30vh;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &-gif img{
+      width: 60vw;
+      height: 50vh;
+    }
+  }
+
+  @media (min-width: $screen-2k) {
+    .winner {
+      &-text {
+    
+        &__loading {
+          @include text-style-vt(36px, 42px);
+        }
+      }
+      &-animation {
+        &__text {
+          @include text-style-vt(36px, 42px);
+        }
+      }
+    }
+  }
+}

@@ -20,25 +20,25 @@
             <div class="icons">
               <ul class="icons-network">
                 <li class="icons-network__youtube">
-                  <a href="https://youtube.com/c/%D0%95%D0%B3%D0%BE%D1%80%D0%91%D0%B0%D1%80%D0%B0%D0%BD%D0%BE%D0%B2_%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3">
+                  <a href="https://youtube.com/c/%D0%95%D0%B3%D0%BE%D1%80%D0%91%D0%B0%D1%80%D0%B0%D0%BD%D0%BE%D0%B2_%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3" target="_blank">
                     <img src="../assets/youtube-white.png"
                       alt="youtube" width="32" height="32">
                   </a>
                 </li>
                 <li class="icons-network__q">
-                  <a href="https://yandex.ru/q/profile/g3aa6vq35d0e97b8e8xd4f4ry8/questions/">
+                  <a href="https://yandex.ru/q/profile/g3aa6vq35d0e97b8e8xd4f4ry8/questions/" target="_blank">
                     <img src="../assets/yandex-white.png"
                       alt="yandex-q" width="32" height="32">
                   </a>
                 </li>
                 <li class="icons-network__zen">
-                  <a href="https://clck.ru/YwrJF">
+                  <a href="https://clck.ru/YwrJF" target="_blank">
                     <img src="../assets/yandex-zen-white.png"
                       alt="yandex zen" width="32" height="32">
                   </a>
                 </li>
                 <li class="icons-network__tiktok">
-                  <a href="https://vm.tiktok.com/ZM8pvCr81/">
+                  <a href="https://vm.tiktok.com/ZM8pvCr81/" target="_blank">
                   <img src="../assets/tiktok-white.png"
                     alt="tik-tok" width="32" height="32">
                   </a>
@@ -69,7 +69,6 @@ export default {
     },
     updateBtn() {
       this.counter += 1;
-      console.log(this.counter);
 
       switch (this.counter) {
         case 1:

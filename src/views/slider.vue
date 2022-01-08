@@ -3,8 +3,9 @@
     <div class="slider-inner">
       <section class="slider-questions">
         <div :class="{'slider-questions-block':isAnimation}">
-          <p class="slider-questions-block__text"
-          v-bind:class="{'slider-loading':isActive}">{{text}}</p>
+          <h2 class="slider-questions-block__text"
+          :class="{'slider-loading':isActive}">
+          </h2>
         </div>
       </section>
       <section class="slider-buttons">
@@ -23,6 +24,23 @@
             </router-link>
           </div>
       </section>
+      <section class="slider-devil">
+        <div class="slider-devil-left">
+          <div class="slider-devil-left__imgLeft">
+            <img src="../assets/devil.png" alt="Смешная картинка дьявола" width="150" height="150">
+          </div>
+          <h3 class="slider-devil-left__textYes">жми "да"</h3>
+        </div>
+      </section>
+      <section class="slider-devil">
+        <div class="slider-devil-right">
+          <div class="slider-devil-right__imgRight">
+            <img src="../assets/devil.png" alt="Ещё одна смешная картинка дьявола"
+          width="150" height="150">
+          </div>
+          <h3 class="slider-devil-right__textNo">не может все зависеть от тебя</h3>
+        </div>
+      </section>
       <router-view></router-view>
     </div>
   </section>
@@ -34,7 +52,8 @@ export default {
   data() {
     return {
       loading: 'loading',
-      text: '',
+      firstLine: 'Может лучше пойти к психологу?',
+      thirdLine: '',
       counter: 0,
       isActive: true,
       isAnimation: false,
@@ -62,7 +81,19 @@ export default {
       setTimeout(() => {
         this.isActive = false;
         this.isAnimation = true;
-        this.text = 'Может лучше пойти к психологу?';
+        this.textAnimation();
+      }, 3000);
+      setTimeout(() => {
+        document.querySelector('.slider-buttons').style.display = 'flex';
+        document.querySelector('.slider-buttons').style.opacity = 1;
+      }, 7000);
+    },
+    changeButtonsAnimation() {
+      document.querySelector('.slider-buttons').style.display = 'none';
+      document.querySelector('.slider-buttons').style.opacity = 0;
+      document.querySelector('.slider-devil-left').style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector('.slider-buttons').style.display = 'flex';
         document.querySelector('.slider-buttons').style.opacity = 1;
       }, 5000);
     },
@@ -71,6 +102,33 @@ export default {
     },
     addAnimation() {
       this.isAnimation = true;
+    },
+    devilAnimationLeft() {
+      setTimeout(() => {
+        document.querySelector('.slider-devil-left').style.opacity = 1;
+      }, 5000);
+    },
+    devilAnimationRight() {
+      setTimeout(() => {
+        document.querySelector('.slider-devil-right').style.opacity = 1;
+      }, 5000);
+    },
+    textAnimation() {
+      const selector = document.querySelector('.slider-questions-block__text');
+      selector.innerHTML = '';
+      let i = 0;
+      const text = this.firstLine;
+
+      function textWriter() {
+        if (i < text.length) {
+          selector.innerHTML += text.charAt(i);
+          i += 1;
+        }
+      }
+      const intervalID = setInterval(textWriter, 100);
+      if (i >= text.length) {
+        clearInterval(intervalID);
+      }
     },
     changeText(id) {
       if (this.counter === 0 && id === 0) {
@@ -96,25 +154,36 @@ export default {
       }
       switch (this.counter) {
         default:
-          this.text = 'Может лучше пойти к психологу?';
+          this.firstLine = 'Может лучше пойти к психологу?';
           break;
         case (1):
-          this.text = 'Как насчёт волшебной таблетки?';
+          this.changeButtonsAnimation();
+          this.firstLine = 'Как насчёт волшебной таблетки?';
+          this.textAnimation();
           break;
         case (2):
-          this.text = 'Решим всё побыстрее, за пару месяцев?';
+          this.changeButtonsAnimation();
+          this.devilAnimationLeft();
+          this.firstLine = 'Решим всё побыстрее, за пару месяцев?';
+          this.textAnimation();
           break;
         case (3):
-          this.text = 'Буду работать пока не решу проблему';
+          this.changeButtonsAnimation();
+          this.firstLine = 'Буду работать, пока не решу проблему';
+          this.textAnimation();
           break;
         case (4):
-          this.text = 'У меня хватит терпения';
+          this.changeButtonsAnimation();
+          this.firstLine = 'У меня хватит терпения';
+          this.textAnimation();
           break;
         case (5):
-          this.text = 'Все зависит от того, насколько я сильно стараюсь';
+          this.changeButtonsAnimation();
+          this.devilAnimationRight();
+          this.firstLine = 'Все зависит от того, насколько сильно я стараюсь';
+          this.textAnimation();
           break;
       }
-      console.log(this.counter, this.buttons[id].link, id);
     },
   },
 };

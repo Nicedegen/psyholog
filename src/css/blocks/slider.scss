@@ -1,0 +1,476 @@
+.slider {
+  text-transform: lowercase;
+
+  &-inner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &-loading {
+    @include text-style-vt(20px, 24px);
+    text-align: center;
+
+    &::before {
+      content: 'Загрузка';
+    }
+
+    &::after {
+      content: '.';
+      animation: loading 1s ease infinite;
+    }
+
+    @keyframes loading {
+      60%  { text-shadow: 0.35em 0 0 currentColor; }
+      100% { text-shadow: 0.35em 0 0 currentColor, 0.75em 0 0 currentColor; }
+    }
+  }
+
+  &-questions {
+    height: 40vh;
+    align-self: center;
+    padding-top: 30vh;
+
+    &-block {
+      width: 80vw;
+      text-align: center;
+
+      &__text {
+        display: inline-block;
+        padding-right: 10px;
+        @include text-style-vt(36px, 40px);
+      }
+    }
+
+    
+  }
+
+  &-buttons {
+    display: none;
+    justify-content: center;
+    padding-top: 25vh;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+
+    &__yes,
+    &__no {
+      width: 120px;
+      height: 50px;
+      background-color: $bg-color;
+      border: 1px solid $main-color;
+      color: $main-color;
+      @include text-style-vt(24px, 32px);
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__yes {
+      margin-right: 5vw;
+    }
+  }
+
+  &-devil {
+    &-left {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+
+      &__imgLeft {
+        position: absolute;
+        transform: rotate(30deg);
+        left: -10vw;
+        top: 45vh;
+      }
+      &__textYes {
+        @include text-style-roboto(24px, 32px);
+        display: inline-block;
+        width: 30vw;
+        position: absolute;
+        top: 50vh;
+        left: 20vw;
+      }
+    }
+
+    &-right {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+
+      &__imgRight {
+          position: absolute;
+          left: 60vw;
+          top: 80vh;
+      }
+      &__textNo {
+        @include text-style-roboto(24px, 32px);
+        display: inline-block;
+        width: 50vw;
+        position: absolute;
+        top: 80vh;
+        left: 15vw;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max){
+    .slider {
+      &-questions-block {
+        &__text {
+          @include text-style-vt(36px, 40px);
+        }
+      }
+
+      &-devil {
+        &-left {
+          &__imgLeft {
+            left: -10vw;
+            top: 45vh;
+          }
+          &__textYes {
+            @include text-style-roboto(22px, 32px);
+            width: 30vw;
+            top: 50vh;
+            left: 12vw;
+          }
+        }
+    
+        &-right {
+          &__imgRight {
+            top: 70vh;
+            left: 70vw;
+          }
+          &__textNo {
+            @include text-style-roboto(22px, 32px);
+            top: 80vh;
+            left: 20vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) and (max-width: $screen-md-max){
+    .slider {
+      &-questions-block {
+        &__text {
+          @include text-style-vt(48px, 50px);
+        }
+      }
+      
+      &-buttons {
+          &__yes,
+          &__no {
+            width: 170px;
+            height: 80px;
+            @include text-style-vt(40px, 44px);
+          }
+      }
+
+      &-devil {
+        &-left {
+          &__imgLeft {
+            left: -7vw;
+            top: 45vh;
+            img {
+              width: 200px;
+              height: 200px;
+            }
+          }
+          &__textYes {
+            @include text-style-roboto(32px, 40px);
+            width: 30vw;
+            top: 50vh;
+            left: 17vw;
+          }
+        }
+    
+        &-right {
+          &__imgRight {
+            top: 80vh;
+            img {
+              width: 150px;
+              height: 150px;
+            }
+          }
+          
+          &__textNo {
+            @include text-style-roboto(24px, 32px);
+            width: 50vw;
+            top: 85vh;
+            left: 15vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg) and (max-width: $screen-lg-max){
+    .slider {
+      &-questions-block {
+        &__text {
+          @include text-style-vt(64px, 70px);
+        }
+      }
+      
+      &-buttons {
+          &__yes,
+          &__no {
+            width: 220px;
+            height: 100px;
+            @include text-style-vt(50px, 60px);
+          }
+      }
+
+      &-devil {
+        &-left {
+          &__imgLeft {
+            transform: rotate(0deg);
+            left: 5vw;
+            top: 45vh;
+
+            img {
+              width: 200px;
+              height: 200px;
+            }
+          }
+          &__textYes {
+            @include text-style-roboto(32px, 50px);
+            width: 30vw;
+            top: 50vh;
+            left: 25vw;
+          }
+        }
+    
+        &-right {
+          &__imgRight {
+            img {
+              left: 60vw;
+            }
+          }
+          &__textNo {
+            @include text-style-roboto(28px, 32px);
+            width: 50vw;
+            top: 85vh;
+            left: 15vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $screen-sm) {
+    .slider {
+      &-questions-block {
+        &__text {
+          @include text-style-vt(40px, 40px);
+        }
+      }
+      
+      &-buttons {
+          &__yes,
+          &__no {
+            width: 120px;
+            height: 50px;
+            @include text-style-vt(22px, 24px);
+          }
+      }
+
+      &-devil {
+        &-left {
+          &__imgLeft {
+            transform: rotate(30deg);
+            left: -10vw;
+            top: 45vh;
+          }
+          &__textYes {
+            @include text-style-roboto(22px, 30px);
+            width: 30vw;
+            top: 50vh;
+            left: 30vw;
+          }
+        }
+    
+        &-right {
+          &__imgRight {
+            top: 75vh;
+          }
+          &__textNo {
+            text-align: center;
+            @include text-style-roboto(22px, 32px);
+            width: 45vw;
+            top: 80vh;
+            left: 15vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $screen-ssm) {
+    .slider {
+      
+      &-inner {
+        padding-left: 5%;
+      }
+
+      &-questions {
+        padding-top: 20vh;
+      }
+
+
+      &-buttons {
+        padding-top: 20vh;
+      }
+
+      &-devil {
+        &-left {
+          &__imgLeft {
+            transform: rotate(30deg);
+            left: -10vw;
+            top: 75vh;
+          }
+          &__textYes {
+            @include text-style-roboto(22px, 30px);
+            width: 30vw;
+            top: 80vh;
+            left: 35vw;
+          }
+        }
+    
+        &-right {
+          &__imgRight {
+            top: 75vh;
+          }
+          &__textNo {
+            text-align: center;
+            @include text-style-roboto(22px, 32px);
+            width: 45vw;
+            top: 80vh;
+            left: 15vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 350px) {
+    .slider {
+
+      &-inner {
+        padding-left: 15%;
+      }
+
+      &-buttons {
+        padding-top: 25vh;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    .slider {
+
+      &-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+
+      &-questions-block {
+        &__text {
+          @include text-style-vt(60px, 70px);
+        }
+      }
+      
+      &-buttons {
+          &__yes,
+          &__no {
+            width: 220px;
+            height: 80px;
+            @include text-style-vt(44px, 50px);
+          }
+      }
+
+      &-devil {
+        &-left {
+          &__imgLeft {
+            transform: rotate(0deg);
+            left: 100px;
+            top: 400px;
+
+            img {
+              width: 200px;
+              height: 200px;
+            }
+          }
+          &__textYes {
+            @include text-style-roboto(40px, 50px);
+            top: 400px;
+            left: 300px;
+          }
+        }
+    
+        &-right {
+          &__imgRight {
+              left: 1000px;
+              bottom: 0;
+
+              img {
+                width: 200px;
+                height: 200px;
+              }
+          }
+          &__textNo {
+            @include text-style-roboto(40px, 52px);
+            bottom: 0;
+            left: 450px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-2k) {
+    .slider {
+
+      &-devil {
+        &-left {
+          &__imgLeft {
+            left: 100px;
+            top: 700px;
+
+            img {
+              width: 250px;
+              height: 250px;
+            }
+          }
+          &__textYes {
+            @include text-style-roboto(40px, 50px);
+            top: 700px;
+            left: 350px;
+          }
+        }
+    
+        &-right {
+          &__imgRight {
+              left: 1000px;
+              top: 700px;
+
+              img {
+                width: 250px;
+                height: 250px;
+              }
+          }
+          &__textNo {
+            @include text-style-roboto(40px, 52px);
+            top: 700px;
+            left: 500px;
+          }
+        }
+      }
+    }
+  }
+}
