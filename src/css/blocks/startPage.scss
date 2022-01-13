@@ -1,0 +1,267 @@
+.main-page {
+  width: 100vw;
+  height: 100vh;
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-transform: lowercase;
+
+  &-content {
+    flex: 1 0 auto;
+  }
+  
+
+  &-gif,
+  &-button {
+      text-align: center;
+
+      &__start {
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  
+  &-footer {
+    flex: 0 0 auto;
+
+    .icons {
+      &-network {
+        display: flex;
+        justify-content: center;
+
+        li {
+          list-style-type: none;
+        }
+      }
+    } 
+  }
+  
+  @media (max-width: $screen-sm-max) {
+    background-color: $bg-color;
+    &-gif {
+        padding-top: 15vh;
+        margin-left: -80px;
+
+        &__img {
+          width: 100vw;
+          height: 30vh;
+        }
+    }
+    &-button {
+      justify-content: center;
+      padding-top: 14vh;
+      display: flex;
+      align-items: flex-end;
+
+
+      &__start {
+        @include text-style-roboto(22px, 24px);
+        width: 68vw;
+        height: 65px;
+        border-radius: 12px;
+        border: 1px solid #fff;
+      }  
+    }
+    &-footer {
+      &-inner {
+        padding-bottom: 8vh;
+      }
+    }
+    
+    .icons {
+      &-network {
+        padding-top: 5vh;
+
+        li+li{
+          padding-left: 12vw;
+        }
+      }
+    } 
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max) {
+    .main {
+      &-gif {
+        padding-top: 5vh;
+        img {
+          width: 70vw;
+          height: 50vh;
+        }
+      }
+
+      &-button {
+        padding-top: 5vh;
+
+        &__start {
+          width: 40vw;
+        }
+      }
+    }
+
+    .icons-network {
+      padding-top: 8vh;
+
+      li+li {
+        padding-left: 7vw;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    &-gif {
+      margin-left: -50px;
+      padding-top: 20vh;
+
+      &__img {
+        width: 60vw;
+        height: 30vh;
+      }
+    }
+    &-button {
+      padding-top: 15vh;
+
+      &__start {
+        width: 30vw;
+        height: 65px;
+        border-radius: 12px;
+        @include text-style-roboto(22px, 24px);
+      }  
+    }
+    &-footer {
+      &-inner {
+        padding-bottom: 10vh;
+      }
+    }
+    
+    .icons {
+      &-network {
+        width: 60vw;
+        margin: 0 auto;
+        justify-content: space-around;
+      }
+    } 
+  }
+  @media (min-width: $screen-lg) and (max-width: $screen-lg-max) {
+    &-gif {
+      padding-top: 15vh;
+      margin-left: -50px;
+
+      &__img {
+        width: 45vw;
+        height: 32vh;
+      }
+    }
+    &-button {
+      padding-top: 17vh;
+
+      &__start {
+        width: 20vw;
+        height: 7vh;
+        border-radius: 12px;
+        @include text-style-roboto(24px, 32px)
+      }  
+    }
+    &-footer {
+      &-inner {
+        padding-bottom: 10vh;
+      }
+    }
+    
+    .icons {
+      &-network {
+        width: 40vw;
+        margin: 0 auto;
+        justify-content: space-around;
+      }
+    }  
+  }
+  @media (min-width: $screen-xl) {
+    &-gif {
+      padding-top: 15vh;
+      margin-left: -50px;
+
+      &__img {
+        width: 40vw;
+        height: 35vh;
+      }
+    }
+    &-button {
+      padding-top: 15vh;
+
+      &__start {
+        width: 330px;
+        height: 70px;
+        border-radius: 12px;
+        @include text-style-roboto(32px, 40px);
+      }  
+    }
+    &-footer {
+      &-inner {
+        padding-bottom: 10vh;
+      }
+    }
+    
+    .icons {
+      &-network {
+        width: 35vw;
+        margin: 0 auto;
+        justify-content: space-around;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        
+      }
+    }   
+  }
+  @media (min-width: $screen-mxl) {
+    &-gif {
+      padding-top: 15vh;
+      margin-left: -50px;
+
+      &__img {
+        width: 40vw;
+        height: 35vh;
+      }
+    }
+    &-button {
+      padding-top: 15vh;
+
+      &__start {
+        width: 450px;
+        height: 90px;
+        border-radius: 12px;
+        @include text-style-roboto(40px, 46px);
+      }  
+    }
+    &-footer {
+      &-inner {
+        padding-bottom: 10vh;
+      }
+    }
+    
+    .icons {
+      &-network {
+        width: 35vw;
+        margin: 0 auto;
+        justify-content: space-around;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+      }
+    }   
+  }        
+}

@@ -1,4 +1,33 @@
+@mixin text-style-roboto ($size: 16px, $height: 22px) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $size;
+  font-weight: 400;
+  line-height: $height;
+};
 
+@mixin text-style-vt ($size: 16px, $height: 22px) {
+  font-family: 'VT323', monospace;
+  font-size: $size;
+  font-weight: 400;
+  line-height: $height;
+};
+
+$main-color: #fff;
+$bg-color: #000;
+
+
+$screen-ssm: 400px;
+$screen-sm: 576px;
+$screen-sml: 650px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-mxl: 1600px;
+$screen-2k: 2000px;
+
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
 
 
 

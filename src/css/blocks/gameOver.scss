@@ -1,0 +1,32 @@
+.loos {
+  
+  &-inner {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+  }
+  &-text {
+    @include text-style-vt(24px, 32px);
+    padding-top: 35vh;
+    text-transform: uppercase;
+  }
+
+  &-btn {
+    padding-top: 15vh;
+
+    button {
+      @include text-style-vt(22px, 24px);
+    }
+  }
+
+  @media (min-width: $screen-sml) and (max-width: $screen-sm-max){
+    .main-button__start {
+      width: 20vw;
+      height: 12vh;
+    }
+  }
+}
+/* ---    GameOver PAGE ---------- */
+
+/* ---    End PAGE ---------- */
+
