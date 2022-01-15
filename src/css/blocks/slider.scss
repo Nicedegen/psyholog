@@ -12,6 +12,7 @@
   &-loading {
     @include text-style-vt(20px, 24px);
     text-align: center;
+    margin-left: -10%;
 
     &::before {
       content: 'Загрузка';
