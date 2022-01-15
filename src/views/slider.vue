@@ -82,7 +82,7 @@ export default {
         this.isActive = false;
         this.isAnimation = true;
         this.textAnimation();
-      }, 3000);
+      }, 4000);
       setTimeout(() => {
         document.querySelector('.slider-buttons').style.display = 'flex';
         document.querySelector('.slider-buttons').style.opacity = 1;
@@ -180,7 +180,7 @@ export default {
         case (5):
           this.changeButtonsAnimation();
           this.devilAnimationRight();
-          this.firstLine = 'Все зависит от того, насколько сильно я стараюсь';
+          this.firstLine = 'Всё зависит только от того, как сильно я стараюсь';
           this.textAnimation();
           break;
       }
