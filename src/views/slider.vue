@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       loading: 'loading',
-      firstLine: 'Может лучше пойти к психологу?',
+      firstLine: 'Может лучше пойти к психологу?..',
       thirdLine: '',
       counter: 0,
       isActive: true,
@@ -154,17 +154,17 @@ export default {
       }
       switch (this.counter) {
         default:
-          this.firstLine = 'Может лучше пойти к психологу?';
+          this.firstLine = 'Может лучше пойти к психологу?..';
           break;
         case (1):
           this.changeButtonsAnimation();
-          this.firstLine = 'Как насчёт волшебной таблетки?';
+          this.firstLine = 'Как насчёт волшебной таблетки?..';
           this.textAnimation();
           break;
         case (2):
           this.changeButtonsAnimation();
           this.devilAnimationLeft();
-          this.firstLine = 'Решим всё побыстрее, за пару месяцев?';
+          this.firstLine = 'Решим всё побыстрее, за пару месяцев?..';
           this.textAnimation();
           break;
         case (3):
