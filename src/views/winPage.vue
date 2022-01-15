@@ -32,7 +32,7 @@ export default {
       const selector = document.querySelector('.winner-animation__text');
       selector.innerHTML = '';
       let i = 0;
-      const text = 'ПОХОЖЕ ВЫ ГОТОВЫ';
+      const text = 'ПОХОЖЕ, ВЫ ГОТОВЫ';
 
       function textWriter() {
         if (i < text.length) {
