@@ -31,6 +31,12 @@
                       alt="yandex-q" width="32" height="32">
                   </a>
                 </li>
+                <li class="icons-network__tiktok">
+                  <a href="https://www.instagram.com/egor_baranov_/" target="_blank">
+                  <img src="../assets/instagram.png"
+                    alt="tik-tok" width="32" height="32">
+                  </a>
+                </li>
                 <li class="icons-network__zen">
                   <a href="https://clck.ru/YwrJF" target="_blank">
                     <img src="../assets/yandex-zen-white.png"
@@ -45,6 +51,13 @@
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="main-button main-bottom-donats">
+            <router-link to="/donats">
+              <button class="main-button__start donats">
+                донаты
+              </button>
+            </router-link>
           </div>
         </footer>
       </div>

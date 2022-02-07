@@ -9,6 +9,7 @@
       </div>
       <div class="winner-gif">
         <a href="https://ig.me/m/egor_baranov_"><img src="../assets/NyIz.gif" alt="Ссылка на директ инстаграмма"></a>
+        <p class="winner-gif__text">Клац!</p>
       </div>
     </div>
   </div>
