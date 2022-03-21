@@ -19,10 +19,17 @@
           <div class="main-footer-inner">
             <div class="icons">
               <ul class="icons-network">
-                <li class="icons-network__youtube">
+                                <!-- Из за последний событий скрываем отключенные сервисы -->
+                <!-- <li class="icons-network__youtube">
                   <a href="https://youtube.com/c/%D0%95%D0%B3%D0%BE%D1%80%D0%91%D0%B0%D1%80%D0%B0%D0%BD%D0%BE%D0%B2_%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3" target="_blank">
                     <img src="../assets/youtube-white.png"
                       alt="youtube" width="32" height="32">
+                  </a>
+                </li> -->
+                <li class="icons-network__q">
+                  <a href="https://t.me/kaplyapsiho" target="_blank">
+                    <img src="../assets/telegram-1.png"
+                      alt="telegram" width="32" height="32" class="icons-network__q-telegram">
                   </a>
                 </li>
                 <li class="icons-network__q">
@@ -43,12 +50,14 @@
                       alt="yandex zen" width="32" height="32">
                   </a>
                 </li>
-                <li class="icons-network__tiktok">
+
+                <!-- Из за последний событий скрываем отключенные сервисы -->
+                <!-- <li class="icons-network__tiktok">
                   <a href="https://vm.tiktok.com/ZM8pvCr81/" target="_blank">
                   <img src="../assets/tiktok-white.png"
                     alt="tik-tok" width="32" height="32">
                   </a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
