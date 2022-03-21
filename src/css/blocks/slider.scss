@@ -348,8 +348,8 @@
           &__textNo {
             text-align: center;
             @include text-style-roboto(22px, 32px);
-            width: 45vw;
-            top: 80vh;
+            width: 55vw;
+            top: 75vh;
             left: 15vw;
           }
         }
@@ -408,8 +408,8 @@
           }
           &__textYes {
             @include text-style-roboto(40px, 50px);
-            top: 400px;
-            left: 300px;
+            top: 350px;
+            left: 150px;
           }
         }
     

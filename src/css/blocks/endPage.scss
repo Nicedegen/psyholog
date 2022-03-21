@@ -48,6 +48,19 @@
     padding-top: 10vh;
     opacity: 0;
     transition: opacity 5s ease-in-out;
+    position: relative;
+    &__text {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      color: black;
+      font-size: 28px;
+
+      @media(min-width: 1280px) {
+        left: 48%;
+      }
+    }
   }
 
   @media (min-width: $screen-sml) and (max-width: $screen-sm-max){
@@ -68,17 +81,12 @@
   @media (min-width: $screen-md-max) {
     .winner {
     }
-    &-gif img{
+    &-gif {
+      img{
       width: 30vw;
       height: 30vh;
     }
   }
-
-  @media (max-width: 400px) {
-    &-gif img{
-      width: 60vw;
-      height: 50vh;
-    }
   }
 
   @media (min-width: $screen-2k) {

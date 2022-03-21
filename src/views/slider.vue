@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       loading: 'loading',
-      firstLine: 'Может лучше пойти к психологу?',
+      firstLine: 'Может лучше пойти к психологу?..',
       thirdLine: '',
       counter: 0,
       isActive: true,
@@ -82,7 +82,7 @@ export default {
         this.isActive = false;
         this.isAnimation = true;
         this.textAnimation();
-      }, 3000);
+      }, 4000);
       setTimeout(() => {
         document.querySelector('.slider-buttons').style.display = 'flex';
         document.querySelector('.slider-buttons').style.opacity = 1;
@@ -154,17 +154,17 @@ export default {
       }
       switch (this.counter) {
         default:
-          this.firstLine = 'Может лучше пойти к психологу?';
+          this.firstLine = 'Может лучше пойти к психологу?..';
           break;
         case (1):
           this.changeButtonsAnimation();
-          this.firstLine = 'Как насчёт волшебной таблетки?';
+          this.firstLine = 'Как насчёт волшебной таблетки?..';
           this.textAnimation();
           break;
         case (2):
           this.changeButtonsAnimation();
           this.devilAnimationLeft();
-          this.firstLine = 'Решим всё побыстрее, за пару месяцев?';
+          this.firstLine = 'Решим всё побыстрее, за пару месяцев?..';
           this.textAnimation();
           break;
         case (3):
@@ -180,7 +180,7 @@ export default {
         case (5):
           this.changeButtonsAnimation();
           this.devilAnimationRight();
-          this.firstLine = 'Все зависит от того, насколько сильно я стараюсь';
+          this.firstLine = 'Всё зависит только от того, как сильно я стараюсь';
           this.textAnimation();
           break;
       }

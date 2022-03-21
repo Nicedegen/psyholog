@@ -8,7 +8,10 @@
         <h3 class="winner-animation__text"></h3>
       </div>
       <div class="winner-gif">
-        <a href="https://ig.me/m/egor_baranov_"><img src="../assets/NyIz.gif" alt="Ссылка на директ инстаграмма"></a>
+        <!-- Меняем на телеграмм из-за закрытия сервисов -->
+        <!-- <a href="https://ig.me/m/egor_baranov_"><img src="../assets/NyIz.gif" alt="Ссылка на директ инстаграмма"></a> -->
+        <a href="https://t.me/egorbaranov_therapy"><img src="../assets/NyIz.gif" alt="Ссылка на директ инстаграмма"></a>
+        <p class="winner-gif__text">Клац!</p>
       </div>
     </div>
   </div>
@@ -32,7 +35,7 @@ export default {
       const selector = document.querySelector('.winner-animation__text');
       selector.innerHTML = '';
       let i = 0;
-      const text = 'ПОХОЖЕ ВЫ ГОТОВЫ';
+      const text = 'ПОХОЖЕ, ВЫ ГОТОВЫ';
 
       function textWriter() {
         if (i < text.length) {
