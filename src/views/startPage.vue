@@ -51,10 +51,17 @@
                 </li>
 
                 <!-- Из за последний событий скрываем отключенные сервисы -->
-                <li class="icons-network__tiktok">
+                <!-- <li class="icons-network__tiktok">
                   <a href="https://vm.tiktok.com/ZM8pvCr81/" target="_blank">
                   <img src="../assets/tiktok-white.png"
                     alt="tik-tok" width="32" height="32">
+                  </a>
+                </li> -->
+
+                <li class="icons-network__vk">
+                  <a href="https://vk.com/public213127328" target="_blank">
+                  <img src="../assets/vk-64.png"
+                    alt="vk" width="28" height="28">
                   </a>
                 </li>
               </ul>
