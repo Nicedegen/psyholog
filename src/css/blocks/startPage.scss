@@ -50,7 +50,7 @@
 
         &__yandex-music {
           position: absolute;
-          bottom: 10%;
+          bottom: 5%;
           right: 10px;
           img {
             width: 220px;
@@ -61,7 +61,7 @@
       @media (max-width: $screen-ssm) {
         &__yandex-music {
           position: absolute;
-          bottom: 12%;
+          bottom: 8%;
           right: 10px;
           img {
             width: 160px;
